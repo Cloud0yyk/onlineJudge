@@ -22,7 +22,6 @@ export default {
   mutations: {
     updateUser(state, payload) {
       state.loginUser = payload;
-      console.log(state.loginUser);
     },
   },
 };

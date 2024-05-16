@@ -54,16 +54,6 @@ const visibleRoutes = computed(() => {
   });
 });
 
-// const visibleRoutes = routes.filter((item, index) => {
-//   if (item.meta?.hideInMenu) {
-//     return false;
-//   }
-//   if (!checkAccess(loginUser, item?.meta?.access as string)) {
-//     return false;
-//   }
-//   return true;
-// });
-
 // 路由跳转后 更新菜单项
 router.afterEach((to, from, failure) => {
   selectedKeys.value = [to.path];

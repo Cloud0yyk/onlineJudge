@@ -10,7 +10,6 @@ const checkAccess = (
   loginUser: any,
   needAccess: string = ACCESS_ENUM.NOT_LOGIN
 ) => {
-  console.log(loginUser);
   // 获取当前登录用户的权限
   const loginUserAccess = loginUser?.userRole ?? ACCESS_ENUM.NOT_LOGIN;
   if (needAccess === ACCESS_ENUM.NOT_LOGIN) {
