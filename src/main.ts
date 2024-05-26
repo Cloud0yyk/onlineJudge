@@ -8,6 +8,7 @@ import store from "./store";
 // import axios from "axios";
 
 import "@/plugins/axios";
+import "@/access";
 
 const app = createApp(App);
 

@@ -1,6 +1,7 @@
 // getters
 import ACCESS_ENUM from "@/access/accessEnum";
 import { UserControllerService } from "../../generated";
+import { StoreOptions } from "vuex";
 
 const getters = {};
 
@@ -32,4 +33,4 @@ export default {
       state.loginUser = payload;
     },
   },
-};
+} as StoreOptions<any>;
