@@ -5,6 +5,7 @@ import "@arco-design/web-vue/dist/arco.css";
 
 import router from "./router";
 import store from "./store";
+import "bytemd/dist/index.css";
 // import axios from "axios";
 
 import "@/plugins/axios";
