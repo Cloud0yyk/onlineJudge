@@ -43,8 +43,8 @@ onMounted(() => {
     theme: "vs-dark",
   });
 
-  codeEditor.value.onDidchangeModelContent(() => {
-    console.log("目前内容为:", toRaw(codeEditor.value).getValue());
+  codeEditor.value.onDidChangeModelContent(() => {
+    // console.log("目前内容为:", toRaw(codeEditor.value).getValue());
     props.handleChange(toRaw(codeEditor.value).getValue());
   });
 });

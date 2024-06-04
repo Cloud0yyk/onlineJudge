@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <!--    <MDEditor :value="value" :handle-change="onChange" />-->
-    <CodeEditor :value="value" :handle-change="onChange" />
+    <CodeEditor :value="codeValue" :handle-change="onCodeChange" />
+    <MDEditor :value="mdValue" :handle-change="onMdChange" />
   </div>
 </template>
 
@@ -10,10 +10,16 @@ import { ref } from "vue";
 import MDEditor from "@/components/MDEditor.vue";
 import CodeEditor from "@/components/CodeEditor.vue"; // @ is an alias to /src
 
-const value = ref("1563135");
-const onChange = (v: string) => {
-  value.value = v;
-  console.log(v);
-  console.log("hello");
+const mdValue = ref("");
+const codeValue = ref("");
+
+const onMdChange = (v: string) => {
+  mdValue.value = v;
+  // console.log(value.value);
+  // console.log("hello");
+};
+
+const onCodeChange = (v: string) => {
+  codeValue.value = v;
 };
 </script>
