@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import MDEditor from "@/components/MDEditor.vue";
+import MDEditor from "@/components/MdEditor.vue";
 import CodeEditor from "@/components/CodeEditor.vue"; // @ is an alias to /src
 
 const mdValue = ref("");

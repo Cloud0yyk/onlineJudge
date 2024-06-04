@@ -32,6 +32,7 @@ const checkAccess = (
     }
     return true;
   }
+  return true;
 };
 
 export default checkAccess;
