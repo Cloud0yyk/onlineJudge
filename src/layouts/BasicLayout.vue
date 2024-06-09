@@ -8,7 +8,7 @@
         <router-view />
       </a-layout-content>
       <a-layout-footer class="footer">
-        <a href="www.baidu.com" target="_blank">编程导航知识星球 by </a>
+        <a target="_blank">by 软件项目管理 第一小组</a>
       </a-layout-footer>
     </a-layout>
   </div>

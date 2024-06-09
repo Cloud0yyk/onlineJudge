@@ -36,7 +36,10 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "主页",
-    component: HomeView,
+    redirect: "/questions",
+    meta: {
+      hideInMenu: true,
+    },
   },
   {
     path: "/hide",
