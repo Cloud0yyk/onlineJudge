@@ -11,9 +11,6 @@
           placeholder="选择编程语言"
         >
           <a-option>java</a-option>
-          <a-option>cpp</a-option>
-          <a-option>go</a-option>
-          <a-option>html</a-option>
         </a-select>
       </a-form-item>
       <a-form-item>
@@ -34,10 +31,18 @@
       @page-change="onPageChange"
     >
       <template #judgeInfo="{ record }">
-        {{ JSON.stringify(record.judgeInfo) }}
+        <a-tag :color="getColor(record.judgeInfo.message?.slice(0, 2))"
+          >{{ record.judgeInfo.message ?? "Compile Error" }}
+        </a-tag>
+      </template>
+      <template #judgeInfoTime="{ record }">
+        {{ record.judgeInfo.time }}
+      </template>
+      <template #judgeInfoMemory="{ record }">
+        {{ record.judgeInfo.memory }}
       </template>
       <template #createTime="{ record }">
-        {{ moment(record.createTime).format("YYYY-MM-DD") }}
+        {{ moment(record.createTime).format("YYYY-MM-DD HH:mm:ss") }}
       </template>
     </a-table>
   </div>
@@ -53,6 +58,7 @@ import {
 import message from "@arco-design/web-vue/es/message";
 import { useRouter } from "vue-router";
 import moment from "moment";
+import { Divider, Flex, Tag } from "antd";
 
 const tableRef = ref();
 
@@ -61,7 +67,7 @@ const total = ref(0);
 const searchParams = ref<QuestionSubmitQueryRequest>({
   questionId: undefined,
   language: undefined,
-  pageSize: 10,
+  pageSize: 20,
   current: 1,
 });
 
@@ -105,13 +111,21 @@ const columns = [
     dataIndex: "language",
   },
   {
-    title: "判题信息",
+    title: "判题情况",
     slotName: "judgeInfo",
   },
   {
-    title: "判题状态",
-    dataIndex: "status",
+    title: "运行时间(ms)",
+    slotName: "judgeInfoTime",
   },
+  {
+    title: "使用内存(KB)",
+    slotName: "judgeInfoMemory",
+  },
+  // {
+  //   title: "判题状态",
+  //   dataIndex: "status",
+  // },
   {
     title: "题目 id",
     dataIndex: "questionId",
@@ -155,11 +169,25 @@ const doSubmit = () => {
     current: 1,
   };
 };
+
+const getColor = (key: string) => {
+  const colorMap = {
+    Ac: "green",
+    Wr: "red",
+    // 添加其他键值对
+  };
+
+  if (key in colorMap) {
+    return colorMap[key];
+  } else {
+    return "orange";
+  }
+};
 </script>
 
 <style scoped>
 #questionSubmitView {
-  max-width: 1280px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 </style>

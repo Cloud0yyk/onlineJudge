@@ -72,7 +72,7 @@ const total = ref(0);
 const searchParams = ref<QuestionQueryRequest>({
   title: "",
   tags: [],
-  pageSize: 8,
+  pageSize: 20,
   current: 1,
 });
 
@@ -116,10 +116,6 @@ const columns = [
   {
     title: "标签",
     slotName: "tags",
-  },
-  {
-    title: "通过率",
-    slotName: "acceptedRate",
   },
   {
     title: "创建时间",

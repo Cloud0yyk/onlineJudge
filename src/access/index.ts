@@ -29,7 +29,7 @@ router.beforeEach(async (to, from, next) => {
       !loginUser.userRole ||
       loginUser.userRole === ACCESS_ENUM.NOT_LOGIN
     ) {
-      next(`/user/login?redirect=${to.fullPath}`);
+      next(`/user/register?redirect=${to.fullPath}`);
       return;
     }
     // 如果已经登录，但是权限不足，则跳转到无权限界面
