@@ -118,10 +118,10 @@ const columns = [
     title: "运行时间(ms)",
     slotName: "judgeInfoTime",
   },
-  {
-    title: "使用内存(KB)",
-    slotName: "judgeInfoMemory",
-  },
+  // {
+  //   title: "使用内存(KB)",
+  //   slotName: "judgeInfoMemory",
+  // },
   // {
   //   title: "判题状态",
   //   dataIndex: "status",

@@ -26,7 +26,10 @@
     >
       <template #tags="{ record }">
         <a-space wrap>
-          <a-tag v-for="(tag, index) of record.tags" :key="index" color="green"
+          <a-tag
+            v-for="(tag, index) of record.tags"
+            :key="index"
+            :color="getColor(tag)"
             >{{ tag }}
           </a-tag>
         </a-space>
@@ -154,6 +157,21 @@ const doSubmit = () => {
     ...searchParams.value,
     current: 1,
   };
+};
+
+const getColor = (key: string) => {
+  const dice = ["中等", "困难"];
+  const colorMap = {
+    0: "orange",
+    1: "red",
+    // 添加其他键值对
+  };
+  let index = dice.indexOf(key);
+  if (index != -1) {
+    return colorMap[index];
+  } else {
+    return "green";
+  }
 };
 </script>
 
