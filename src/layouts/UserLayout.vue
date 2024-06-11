@@ -1,13 +1,13 @@
 <template>
   <div id="userLayout">
     <a-layout style="min-height: 100vh">
-      <a-layout-header class="header">用户布局 </a-layout-header>
-      <a-layout-content class="content">
-        <router-view />
-      </a-layout-content>
-      <a-layout-footer class="footer">
-        <a href="www.baidu.com" target="_blank">编程导航知识星球 by </a>
-      </a-layout-footer>
+      <!--      <a-layout-header class="header">用户布局 </a-layout-header>-->
+      <!--      <a-layout-content class="content">-->
+      <router-view />
+      <!--      </a-layout-content>-->
+      <!--      <a-layout-footer class="footer">-->
+      <!--        <a href="www.baidu.com" target="_blank">编程导航知识星球 by </a>-->
+      <!--      </a-layout-footer>-->
     </a-layout>
   </div>
 </template>
