@@ -9,13 +9,13 @@
                 title="判题条件"
                 :column="{ xs: 1, md: 2, lg: 3 }"
               >
-                <a-descriptions-item label="时间限制">
+                <a-descriptions-item label="时间限制(ms)">
                   {{ question.judgeConfig.timeLimit ?? 0 }}
                 </a-descriptions-item>
-                <a-descriptions-item label="内存限制">
+                <a-descriptions-item label="内存限制(KB)">
                   {{ question.judgeConfig.memoryLimit ?? 0 }}
                 </a-descriptions-item>
-                <a-descriptions-item label="堆栈限制">
+                <a-descriptions-item label="堆栈限制(KB)">
                   {{ question.judgeConfig.stackLimit ?? 0 }}
                 </a-descriptions-item>
               </a-descriptions>
